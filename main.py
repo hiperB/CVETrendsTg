@@ -73,9 +73,9 @@ if (response1):
         text_message += "<b>" + item['cve'] + "</b> /n"
         text_message += "<b>" + str(item['score']) + " : " + item['severity'] + "</b> /n"
         text_message += "<b>Published:</b> <i><u>" + item['publishedDate'] + "</i></u> | <b>Modified:</b> <i><u>" + item['publishedDate'] + "</i></u> /n"
-        text_message += "[Url](" + item['cve_urls'] + ") /n"
+        text_message += "[Url](" + str(item['cve_urls']) + ") /n"
         for url in item['vendor_advisories']:
-            text_message += "[Vendor_url](" + item['url'] + ") /n"
+            text_message += "[Vendor_url](" + url + ") /n"
         text_message += "<b>EPSS:</b> " + str(int(item['epss_score'])*100) + "% /n"
         text_message += "<b>Audience:</b> <i><u>" + str(item['audience_size']) + "</i></u> | <b>Tweets:</b> <i><u>" + item['num_tweets_and_retweets'] + "</i></u> /n"
         text_message += "||" + item['description'] + "|| /n/n/n"
