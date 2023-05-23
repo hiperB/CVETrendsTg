@@ -71,14 +71,14 @@ if (response1):
     for item in response1.json()['data']:
 
         text_message += "<b>" + item['cve'] + "</b> /n"
-        text_message += "<b>" + str(item['score']) + " : " + item['severity'] + "</b> /n"
-        text_message += "<b>Published:</b> <i><u>" + item['publishedDate'] + "</i></u> | <b>Modified:</b> <i><u>" + item['publishedDate'] + "</i></u> /n"
+        text_message += "<b>" + str(item['score']) + " : " + str(item['severity']) + "</b> /n"
+        text_message += "<b>Published:</b> <i><u>" + str(item['publishedDate']) + "</i></u> | <b>Modified:</b> <i><u>" + str(item['publishedDate']) + "</i></u> /n"
         text_message += "[Url](" + str(item['cve_urls']) + ") /n"
         for url in item['vendor_advisories']:
             text_message += "[Vendor_url](" + url + ") /n"
         text_message += "<b>EPSS:</b> " + str(float(item['epss_score'])*100) + "% /n"
         text_message += "<b>Audience:</b> <i><u>" + str(item['audience_size']) + "</i></u> | <b>Tweets:</b> <i><u>" + str(item['num_tweets_and_retweets']) + "</i></u> /n"
-        text_message += "||" + item['description'] + "|| /n/n/n"
+        text_message += "||" + str(item['description']) + "|| /n/n/n"
 
     logging(0, "Try send to Tg...")
     send_msg(text_message)
