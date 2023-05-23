@@ -1,7 +1,7 @@
 import requests
 import telethon
 import telegram
-#from telegram import ParseMode
+from telegram import ParseMode
 import json
 import datetime
 
@@ -34,8 +34,8 @@ def send_msg(text):
     chat_id = channel_id
     bot = telegram.Bot(token=token)
 
-    #bot.sendMessage(chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN_V2)
-    bot.sendMessage(chat_id=chat_id, text=text)
+    bot.sendMessage(chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN_V2)
+    #bot.sendMessage(chat_id=chat_id, text=text)
 
 
 lf = open(dir_logs+'/'+log_file, 'at')
