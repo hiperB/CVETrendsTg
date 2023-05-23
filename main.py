@@ -1,7 +1,7 @@
 import requests
 import telethon
 import telegram
-from telegram import ParseMode
+#from telegram import ParseMode
 import json
 import datetime
 
@@ -34,7 +34,8 @@ def send_msg(text):
     chat_id = channel_id
     bot = telegram.Bot(token=token)
 
-    bot.sendMessage(chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN_V2)
+    #bot.sendMessage(chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN_V2)
+    bot.sendMessage(chat_id=chat_id, text=text)
 
 
 lf = open(dir_logs+'/'+log_file, 'at')
@@ -70,7 +71,7 @@ if (response1):
     for item in response1.json()['data']:
 
         text_message += "<b>" + item['cve'] + "</b> /n"
-        text_message += "<b>" + item['score'] + " : " + item['severity'] + "</b> /n"
+        text_message += "<b>" + str(item['score']) + " : " + item['severity'] + "</b> /n"
         text_message += "<b>Published:</b> <i><u>" + item['publishedDate'] + "</i></u> | <b>Modified:</b> <i><u>" + item['publishedDate'] + "</i></u> /n"
         text_message += "[Url](" + item['cve_urls'] + ") /n"
         for url in item['vendor_advisories']:
