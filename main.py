@@ -77,7 +77,7 @@ if (response1):
         for url in item['vendor_advisories']:
             text_message += "[Vendor_url](" + url + ") /n"
         text_message += "<b>EPSS:</b> " + str(float(item['epss_score'])*100) + "% /n"
-        text_message += "<b>Audience:</b> <i><u>" + str(item['audience_size']) + "</i></u> | <b>Tweets:</b> <i><u>" + item['num_tweets_and_retweets'] + "</i></u> /n"
+        text_message += "<b>Audience:</b> <i><u>" + str(item['audience_size']) + "</i></u> | <b>Tweets:</b> <i><u>" + str(item['num_tweets_and_retweets']) + "</i></u> /n"
         text_message += "||" + item['description'] + "|| /n/n/n"
 
     logging(0, "Try send to Tg...")
