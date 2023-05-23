@@ -35,7 +35,7 @@ except requests.exceptions.RequestException as err:
     logging(0, "OOps: Something Else: " + format(err))
 
 if (response1):
-    print(json.dumps(response1, indent=4, sort_keys=True))
+    print(json.dumps(response1.json(), indent=4, sort_keys=True))
 #
 
 
